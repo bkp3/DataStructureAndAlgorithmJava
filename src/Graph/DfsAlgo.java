@@ -66,10 +66,9 @@ public class DfsAlgo {
 	public void dfsRec(int src) {
 		visited[src] = true;
         System.out.print(src + " ");
-        for (int i = 0; i <adj[src].size() ; i++) {
-            int v = adj[src].get(i);
-            if(!visited[v])
-                dfsRec(v);
+        for (int u:adj[src]) {
+            if(!visited[u])
+                dfsRec(u);
         }
 	}
 	
