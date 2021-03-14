@@ -22,8 +22,9 @@ public class DijkstraAlgo {
 	private static int N,E;
 	private static ArrayList<Node>adjList[];
 	private static PriorityQueue<Node>q;
-	private static final int INF = 987654321;
 	private static int dist[];
+	private static final int INF = 987654321;
+
 
 	public DijkstraAlgo(int n, int e) {
 		//this.N=n+1;		// for vertices start from 1
@@ -61,12 +62,15 @@ public class DijkstraAlgo {
 		
 		dist[src]=0;
 		q.offer(new Node(src,0));
+
 		while(!q.isEmpty()) {
 			Node here=q.poll();
+
 			for(int i=0;i<adjList[here.dst].size();i++) {
 				Node a=adjList[here.dst].get(i);
 				int there=a.dst;
 				int nextdist=dist[here.dst] + a.wt;
+
 				if(dist[there] == INF || dist[there] > nextdist) {
 					dist[there]=nextdist;
 					q.offer(new Node(there,nextdist));
@@ -74,7 +78,7 @@ public class DijkstraAlgo {
 			
 			}
 		}
-		
+
 	}
 	
 	public static void main(String[] args) {
