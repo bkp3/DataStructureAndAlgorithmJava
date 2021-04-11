@@ -11,7 +11,7 @@ import java.util.*;
 
 */
 
-public class Knapsack {
+public class KnapsackRec {
 
     static int maxFun(int a,int b){
         return a>b?a:b;
